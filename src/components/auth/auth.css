@@ -1,0 +1,46 @@
+.auth form{
+    width: 70%;
+    margin: 1.5rem auto;
+    border: .5px solid black;
+    box-shadow: 1px 2px 2px grey;
+    padding: 1rem;
+}
+.auth .errors{
+    width: 50%;
+    margin: auto;
+    background-color: rgb(138, 51, 36);
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.auth .errors p{
+    margin-bottom:0 ;
+}
+.auth form label{
+    color: rgb(214, 9, 214);
+    font-size: 1.5rem;
+    margin: .5rem 0;
+}
+
+.auth form input{
+    width: 100%;
+    font-size: 1rem;
+    min-width: 40%;
+}
+
+.auth form input:focus{
+    outline: none;
+}
+
+.auth label{
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.auth .rules{
+    background-color: rgb(54, 36, 138);
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    text-align: center;
+}
