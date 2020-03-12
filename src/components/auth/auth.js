@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import "./auth.css";
+import { Redirect } from 'react-router';
 import Button from "../UI/button/button";
 import * as authActionTypes from "../../store/actions/auth";
 import Spinner from "../UI/spinner/spinner";
-import { Redirect } from 'react-router';
+import "./auth.css";
 
 export default function Auth() {
     const [signingIn, setsigningIn] = useState(true);
@@ -15,7 +15,7 @@ export default function Auth() {
 
     const dispatch=useDispatch();
 
-    let errors = useSelector(state => {return state.auth.errors});
+    let error = useSelector(state => {return state.auth.errors});
     const isLoading = useSelector(state => {return state.auth.isLoading});
     const token = useSelector(state => { return state.auth.token });
 
@@ -53,6 +53,7 @@ export default function Auth() {
                             type="text"
                             id="name"
                             name="name"
+                            value={name}
                             onChange={(event) => setName(event.target.value)}></input>
                     </React.Fragment>
                 ) : null
@@ -62,12 +63,14 @@ export default function Auth() {
                     type="email"
                     id="email"
                     name="email"
+                    value={email}
                     onChange={(event) => setEmail(event.target.value)}></input>
                 <label>Password</label>
                 <input
                     type="password"
                     id="password"
                     name="password"
+                    value={password}
                     onChange={(event) => setPassword(event.target.value)}></input>
                 <div>
                     <Button type="submit">{signingIn ? "Sign In" : "Sign Up"}</Button>
@@ -91,7 +94,7 @@ export default function Auth() {
         <div className="auth">
             {redirect}
             <div className="errors">
-                {errors.length > 0 ? errors.map(err => (<p key={err.msg}>{err.msg}</p>)) : null}
+                {error? (<p >{error}</p>) : null}
             </div>
             {content}
         </div>

@@ -25,7 +25,7 @@ exports.addMessage = (req, res, next) => {
     const userId = req.userId;
     const userName = req.userName;
     const messageContent = req.body.content;
-    const message = new Message(messageContent,userId,userName);
+    const message = new Message(messageContent, userId, userName);
     //console.log(req.body);
     message.addMessage()
         .then(response => {

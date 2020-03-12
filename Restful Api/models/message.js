@@ -2,12 +2,13 @@ const getDb = require('../utilities/dataBase').getDb;
 const mongoDB = require('mongodb');
 
 class messsage {
-    constructor(content,userId,userName) {
+    constructor(content, userId, userName) {
         this.content = content;
         this.userId = userId;
         this.replies = [];
         this.messageCreator = userName;
         this.messageDate = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()} at ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+        this.createdAt = new Date();
     }
 
     static fetchAllMessages(page) {
@@ -15,7 +16,7 @@ class messsage {
         const db = getDb();
         return db.collection('Messages')
             .find()
-            .sort({messageDate:1})
+            .sort({ createdAt: -1 })
             .skip((+page - 1) * messagesPerPage)
             .limit(messagesPerPage)
             .toArray();
