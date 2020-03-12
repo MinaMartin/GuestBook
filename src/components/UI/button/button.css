@@ -1,0 +1,56 @@
+.button{
+    background-color: transparent;
+    border:none;
+    color: rgb(54, 36, 138);
+    font-weight: 600;
+    padding: 0.5rem;
+    font-size: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    background-color:rgb(239, 238, 245);
+    transition: all .25s ease-in-out;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color:rgb(54, 36, 138);
+    color: white;
+}
+
+.button:disabled{
+    color: grey;
+    cursor: not-allowed;
+}
+
+.button:disabled:hover{
+    background-color:rgb(239, 238, 245);
+}
+
+.button:focus{
+    outline: none;
+}
+
+.cancel{
+    color: rgb(138, 36, 36);
+}
+
+.cancel:hover{
+    background-color: rgb(138, 36, 36);
+}
+
+.edit{
+    color: rgb(36, 138, 58);
+}
+
+.edit:hover{
+    background-color: rgb(36, 138, 58);
+}
+
+.alert{
+    color: rgb(204, 201, 26);
+}
+
+.alert:hover{
+    background-color: rgb(204, 201, 26);
+}

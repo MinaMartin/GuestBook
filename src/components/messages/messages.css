@@ -1,0 +1,14 @@
+.messages{
+    margin-bottom: 5rem;
+}
+
+.messages .addMessage{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.messages .pagination{
+    display: flex;
+    justify-content: space-between;
+}
+
